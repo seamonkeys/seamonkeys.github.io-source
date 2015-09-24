@@ -1,0 +1,11 @@
+name = "Konigi"
+license = "MIT"
+licenselink = "https://github.com/.../.../LICENSE.md"
+description = ""
+homepage = "http://example.com/"
+tags = ["default"]
+features = ["sections", "pages"]
+
+[author]
+  name = "Multiple"
+  homepage = "http://example.com"

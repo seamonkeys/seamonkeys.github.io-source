@@ -1,0 +1,30 @@
+{{ partial "header.html" . }}
+{{ partial "gnav.html" . }}
+{{ partial "body_top.html" . }}
+
+<div class="intro b0">
+  <h2>Section title</h2>
+  <p>Welcome to site.</p>
+</div>
+
+<ul class="home list-grid small-block-grid-1 medium-block-grid-2 large-block-grid-4 block-grid">
+{{ range first 12 (where .Data.Pages) }}
+    {{ .Render "li-grid"}}
+{{ end }}
+</ul>
+
+<hr>
+
+<div id="more" class="row">
+  <div class="columns small-12 medium-6">
+    <p>Check <strong><a href="/blog">the blog</a></strong>. </p>
+  </div>
+  <div class="columns small-12 medium-6">
+    <p> <a href="/search">Searching</a> or <a href="/tags">Browsing Tags</a>.</p>
+  </div>
+</div>
+
+<hr>
+
+{{ partial "body_bottom.html" . }}
+{{ partial "footer.html" . }}
