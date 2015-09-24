@@ -29,7 +29,7 @@ gulp.task("sass", function(){
       'src/css/foundation.min.css',
       'src/css/main.min.css' ])
     .pipe(concat('main.min.css'))
-    .pipe(gulp.dest('themes/default/static/css'))
+    .pipe(gulp.dest('themes/main/static/css'))
     .pipe(notify({ message: 'Sass task complete' }));
 });
 
@@ -41,13 +41,13 @@ gulp.task('js', function() {
     .pipe(gulp.dest('src/js/'))
     .pipe(rename({suffix: '.min'}))
     .pipe(uglify())
-    .pipe(gulp.dest('themes/default/static/js'))
+    .pipe(gulp.dest('themes/main/static/js'))
     .pipe(notify({ message: 'JS Minify task complete' }));
 });
 
 // Clean
 gulp.task('clean', function(cb) {
-    del(['themes/default/static/css', 'themes/default/static/js'], cb)
+    del(['themes/main/static/css', 'themes/main/static/js'], cb)
 });
 
 // Default

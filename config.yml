@@ -1,0 +1,16 @@
+theme: "main"
+baseurl: "http://example.com/"
+languageCode: "en-us"
+title: "Example"
+MetaDataFormat: "yaml "
+pluralizeListTitles: false
+Paginate: "10"
+PageSize: "10"
+canonifyurls: true
+permalinks:
+  post: /:section/:year/:month/:title/
+  comics: /:section/:title
+taxonomies:
+  tag: "tags"
+  category: "categories"
+  status: "status"

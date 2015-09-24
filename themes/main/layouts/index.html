@@ -8,7 +8,7 @@
 </div>
 
 <ul class="home list-grid small-block-grid-1 medium-block-grid-2 large-block-grid-4 block-grid">
-{{ range first 12 (where .Data.Pages) }}
+{{ range first 12 .Data.Pages }}
     {{ .Render "li-grid"}}
 {{ end }}
 </ul>

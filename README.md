@@ -4,7 +4,6 @@
 * `brew install libsass`
 * `npm install`
 
-
-may need:
-* `npm install git+https://git@github.com/sass/node-sass.git`
-* 
+# Credit
+* initial fork off: [https://github.com/jibbajabba/konigi.com]
+* package json inspired by: [https://github.com/jibbajabba/konigi.com]
