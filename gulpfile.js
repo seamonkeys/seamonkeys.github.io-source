@@ -37,8 +37,6 @@ gulp.task("sass", function(){
 gulp.task('js', function() {
   log("Minify JS files " + (new Date()).toString());
   return gulp.src('src/js/**/*.js')
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))
     .pipe(gulp.dest('src/js/'))
     .pipe(rename({suffix: '.min'}))

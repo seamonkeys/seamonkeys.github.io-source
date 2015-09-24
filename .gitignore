@@ -1,2 +1,6 @@
-node-modules/*
+node_modules/*
 public/*
+themes/default/static/css/*
+themes/default/static/js/*
+src/css/main.css
+src/css/main.min.css
