@@ -11,7 +11,9 @@ var gulp = require("gulp"),
   notify = require('gulp-notify'),
   del = require('del'),
   watch = require('gulp-watch'),
-  log = util.log;
+  log = util.log,
+  coffee = require('gulp-coffee');
+
 
 // TASKS
 
@@ -33,10 +35,17 @@ gulp.task("sass", function(){
     .pipe(notify({ message: 'Sass task complete' }));
 });
 
+// Build coffee script
+gulp.task('coffee', function() {
+  gulp.src('src/coffee/*.coffee')
+    .pipe(coffee({bare: true}).on('error', log))
+    .pipe(gulp.dest('src/js-gen/'))
+});
+
 // Minify JS
 gulp.task('js', function() {
   log("Minify JS files " + (new Date()).toString());
-  return gulp.src('src/js/**/*.js')
+  return gulp.src(['src/js/**/*.js','src/js-gen/**/*.js'])
     .pipe(concat('main.js'))
     .pipe(gulp.dest('src/js/'))
     .pipe(rename({suffix: '.min'}))
@@ -47,12 +56,12 @@ gulp.task('js', function() {
 
 // Clean
 gulp.task('clean', function(cb) {
-    del(['themes/main/static/css', 'themes/main/static/js'], cb)
+    del(['themes/main/static/css', 'themes/main/static/js', 'src/js-gen'], cb)
 });
 
 // Default
 gulp.task('default', ['clean'], function() {
-    gulp.start('sass', 'js');
+    gulp.start('sass', 'coffee','js');
 });
 
 // WATCH
